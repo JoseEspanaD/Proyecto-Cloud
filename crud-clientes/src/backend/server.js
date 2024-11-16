@@ -20,14 +20,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// Conexión a la base de datos de PostgreSQL
+// Conexión a la base de datos de PostgreSQL en Azure
 const pool = new Pool({
-    user: 'postgres', // reemplaza con tu usuario de PostgreSQL
-    host: 'localhost',
+    user: 'administradordb', // reemplaza con tu usuario de PostgreSQL en Azure
+    host: 'servidor-db-cloud.postgres.database.azure.com', // reemplaza con la URL de tu servidor PostgreSQL en Azure
     database: 'Carnespa', // reemplaza con tu base de datos
-    password: 'estudio', // reemplaza con tu contraseña
+    password: 'Estudio123', // reemplaza con tu contraseña
     port: 5432, // puerto por defecto de PostgreSQL
+    ssl: {
+        rejectUnauthorized: false // Asegúrate de usar SSL
+    }
 });
+
 
 // Middleware para verificar el token
 const verifyToken = (req, res, next) => {

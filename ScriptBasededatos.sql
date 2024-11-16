@@ -1,3 +1,25 @@
+DROP TABLE administrator;
+DROP TABLE customer;
+DROP TABLE product;
+DROP TABLE "order";
+DROP TABLE order_item;
+DROP TABLE zona;
+DROP TABLE municipio;
+
+DELETE FROM customer;
+DELETE FROM administrator;
+DELETE FROM "order";
+DELETE FROM order_item;
+DELETE FROM product;
+DELETE FROM zona;
+DELETE FROM municipio;
+DELETE FROM category_table;
+
+CREATE SCHEMA public;
+SET search_path TO public;
+
+
+
 create table category_table(
 	category varchar(50) PRIMARY KEY,
 	name varchar(50),
@@ -45,7 +67,6 @@ CREATE TABLE "order" (
     FOREIGN KEY (id_customer) REFERENCES customer(id_customer)
 );
 
-select * from "order"
 CREATE TABLE order_item (
     id_item SERIAL PRIMARY KEY,
 	category varchar(10),
@@ -53,7 +74,7 @@ CREATE TABLE order_item (
     id_order INTEGER NOT NULL,
     id_product INTEGER NOT NULL,
     FOREIGN KEY (id_order) REFERENCES "order" (id_order),
-    FOREIGN KEY (id_product,category) REFERENCES product (id_product,category) 
+    FOREIGN KEY (id_product,category) REFERENCES product (id_product,category) -- Asumiendo que tienes una tabla 'product'
 );
 
 create table administrator(
@@ -71,10 +92,26 @@ CREATE TABLE municipio (
     nombre_municipio VARCHAR(50) NOT NULL
 );
 
+INSERT INTO municipio (nombre_municipio) VALUES
+('Guatemala'),
+('Mixco'),
+('San Miguel Petapa');
+
+
 CREATE TABLE zona (
     id_zona SERIAL PRIMARY KEY,
     nombre_zona VARCHAR(50) NOT NULL
 );
+
+INSERT INTO zona (nombre_zona) VALUES
+('Zona 10'),
+('Zona 13'),
+('Zona 1');
+
+DELETE FROM product
+WHERE id_product = 2;
+
+
 
 select * from municipio;
 select * from zona;
@@ -84,3 +121,5 @@ select * from order_item;
 select * from administrator;
 select * from product;
 select * from category_table;
+
+

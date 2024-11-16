@@ -26,10 +26,20 @@ function Inicio() {
     navigate('/productos');
   };
 
-  // Agrupar categorías en conjuntos de tres
-  const groupedCategories = [];
-  for (let i = 0; i < categories.length; i += 3) {
-    groupedCategories.push(categories.slice(i, i + 3));
+  // Imágenes fijas para el carrusel
+  const images = [
+    'imagen1.jpg', // Reemplaza con la ruta de tu imagen
+    'imagen2.jpg', // Reemplaza con la ruta de tu imagen
+    'imagen3.jpg', // Reemplaza con la ruta de tu imagen
+    'imagen4.jpg', // Reemplaza con la ruta de tu imagen
+    'imagen5.jpg', // Reemplaza con la ruta de tu imagen
+    'imagen6.jpg'  // Reemplaza con la ruta de tu imagen
+  ];
+
+  // Agrupar imágenes en conjuntos de tres
+  const groupedImages = [];
+  for (let i = 0; i < images.length; i += 3) {
+    groupedImages.push(images.slice(i, i + 3));
   }
 
   return (
@@ -49,17 +59,17 @@ function Inicio() {
         <p>Ofrecemos una amplia variedad de embutidos, desde chorizos ahumados hasta jamones curados, todos elaborados con pasión y dedicación.</p>
       </div>
 
-      {/* CAROUSEL dinámico con imágenes de la base de datos */}
+      {/* CAROUSEL dinámico con imágenes fijas */}
       <Carousel className="custom-carousel" controls={true} indicators={true}>
-        {groupedCategories.map((group, index) => (
+        {groupedImages.map((group, index) => (
           <Carousel.Item key={index}>
             <div className="carousel-container">
-              {group.map((category, idx) => (
+              {group.map((image, idx) => (
                 <img
                   key={idx}
                   className="d-block carousel-image"
-                  src={`http://localhost:5001/uploads/${category.image}`} // Construye la URL completa de la imagen
-                  alt={`Imagen de la categoría ${category.name}`}
+                  src={`http://localhost:5001/uploads/${image}`} // Asegúrate de que la ruta sea correcta
+                  alt={`Imagen ${idx + 1}`}
                 />
               ))}
             </div>
