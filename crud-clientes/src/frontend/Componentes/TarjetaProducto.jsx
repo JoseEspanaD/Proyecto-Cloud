@@ -46,7 +46,7 @@ const TarjetaProducto = ({ id, image, title, price, weight, category }) => {
     return (
         <div className="col">
             <div className="card product-card">
-                <img src={`http://localhost:5001/uploads/${image}`} className="card-img-top" alt={title} />
+                <img src={image} className="card-img-top" alt={title} />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">Precio: {price}</p>

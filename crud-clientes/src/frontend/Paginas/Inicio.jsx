@@ -3,7 +3,6 @@ import { Carousel } from 'react-bootstrap';
 import './StylesPaginas.css';
 import Navbar from '../Componentes/Navbar';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
-import Logotipo2 from '../Assets/Logotipo2.PNG';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -26,20 +25,10 @@ function Inicio() {
     navigate('/productos');
   };
 
-  // Imágenes fijas para el carrusel
-  const images = [
-    'imagen1.jpg', // Reemplaza con la ruta de tu imagen
-    'imagen2.jpg', // Reemplaza con la ruta de tu imagen
-    'imagen3.jpg', // Reemplaza con la ruta de tu imagen
-    'imagen4.jpg', // Reemplaza con la ruta de tu imagen
-    'imagen5.jpg', // Reemplaza con la ruta de tu imagen
-    'imagen6.jpg'  // Reemplaza con la ruta de tu imagen
-  ];
-
-  // Agrupar imágenes en conjuntos de tres
-  const groupedImages = [];
-  for (let i = 0; i < images.length; i += 3) {
-    groupedImages.push(images.slice(i, i + 3));
+  // Agrupar categorías en conjuntos de tres
+  const groupedCategories = [];
+  for (let i = 0; i < categories.length; i += 3) {
+    groupedCategories.push(categories.slice(i, i + 3));
   }
 
   return (
@@ -59,17 +48,17 @@ function Inicio() {
         <p>Ofrecemos una amplia variedad de embutidos, desde chorizos ahumados hasta jamones curados, todos elaborados con pasión y dedicación.</p>
       </div>
 
-      {/* CAROUSEL dinámico con imágenes fijas */}
+      {/* CAROUSEL dinámico con imágenes de la base de datos */}
       <Carousel className="custom-carousel" controls={true} indicators={true}>
-        {groupedImages.map((group, index) => (
+        {groupedCategories.map((group, index) => (
           <Carousel.Item key={index}>
             <div className="carousel-container">
-              {group.map((image, idx) => (
+              {group.map((category, idx) => (
                 <img
                   key={idx}
                   className="d-block carousel-image"
-                  src={`http://localhost:5001/uploads/${image}`} // Asegúrate de que la ruta sea correcta
-                  alt={`Imagen ${idx + 1}`}
+                  src={category.image} // Construye la URL completa de la imagen
+                  alt={category.name}
                 />
               ))}
             </div>
@@ -81,7 +70,7 @@ function Inicio() {
       <div className="info-container">
         <h1>¿Quiénes Somos?</h1>
         <div className="info-content">
-          <img className="info-image" src={Logotipo2} alt="Carnespa" />
+          <img className="info-image" src="https://productoscloud2.blob.core.windows.net/productos-pagina2/Logotipo2.PNG?sp=r&st=2024-11-17T01:00:32Z&se=2024-11-30T09:00:32Z&sv=2022-11-02&sr=b&sig=x%2Bqv6W75S0svEeU00lb3MFR4Yb%2BKTym1Oar44pCisgM%3D" alt="Carnespa" />
           <p className="info-text">
             Carnespa es una empresa dedicada a la producción de embutidos de alta calidad,
             utilizando los mejores ingredientes y métodos tradicionales para ofrecer productos

@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaHome, FaBoxOpen, FaClipboardList } from 'react-icons/fa'; // Importa los iconos
 import { TiShoppingCart, TiStarFullOutline } from "react-icons/ti";
 import { NavLink } from 'react-router-dom'; 
-import Logotipo from '../Assets/Logotipo.jpeg';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -22,7 +21,7 @@ const Navbar = () => {
             <div className="container-fluid">
                 {/* Logotipo en la parte izquierda */}
                 <NavLink className="navbar-brand" to="/">
-                    <img src={Logotipo} alt="Logo" className="logo" />
+                    <img src="https://productoscloud2.blob.core.windows.net/productos-pagina2/Logotipo.jpeg?sp=r&st=2024-11-17T00:59:42Z&se=2024-11-30T08:59:42Z&sv=2022-11-02&sr=b&sig=rgYA0OVsiTIrOEL9wso%2BEyRNOYABVXOP%2FGAzeKruMKQ%3D" alt="Logo" className="logo" />
                 </NavLink>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

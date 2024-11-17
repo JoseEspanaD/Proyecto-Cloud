@@ -55,7 +55,7 @@ const DescripcionProducto = ({ product }) => {
   return (
     <div className="detalle-producto-container">
       <div className="detalle-producto-img">
-        <img src={`http://localhost:5001/uploads/${product.image}`} alt={product.name} className="producto-imagen" />
+        <img src={product.image} alt={product.name} className="producto-imagen" />
       </div>
       <div className="detalle-producto-info">
         <h2 className="producto-titulo">{product.name}</h2>
