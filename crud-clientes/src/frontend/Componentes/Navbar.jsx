@@ -20,7 +20,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
                 {/* Logotipo en la parte izquierda */}
-                <NavLink className="navbar-brand" to="/Inicio">
+                <NavLink className="navbar-brand" to="/">
                     <img src="https://productoscloud2.blob.core.windows.net/productos-pagina2/Logotipo.jpeg?sp=r&st=2024-11-17T00:59:42Z&se=2024-11-30T08:59:42Z&sv=2022-11-02&sr=b&sig=rgYA0OVsiTIrOEL9wso%2BEyRNOYABVXOP%2FGAzeKruMKQ%3D" alt="Logo" className="logo" />
                 </NavLink>
 
@@ -31,7 +31,7 @@ const Navbar = () => {
                 {/* Opciones centradas */}
                 <div className="collapse navbar-collapse justify-content-center">
                     <div className="navbar-nav">
-                        <NavLink className="nav-link text-white" to="/Inicio" activeClassName="active"><FaHome className="icon" /> Inicio</NavLink>
+                        <NavLink className="nav-link text-white" to="/" activeClassName="active"><FaHome className="icon" /> Inicio</NavLink>
                         <NavLink className="nav-link text-white" to="/perfil" activeClassName="active"><FaUser className="icon" /> Perfil</NavLink>
                         <NavLink className="nav-link text-white" to="/productos" activeClassName="active"><FaBoxOpen className="icon" /> Productos</NavLink>
                         <NavLink className="nav-link text-white" to="/pedidos" activeClassName="active"><FaClipboardList className="icon" /> Pedidos</NavLink>
