@@ -57,7 +57,7 @@ function Inicio() {
                 <img
                   key={idx}
                   className="d-block carousel-image"
-                  src={category.image} // Construye la URL completa de la imagen
+                  src={category.image} 
                   alt={category.name}
                 />
               ))}

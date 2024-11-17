@@ -9,7 +9,7 @@ import PaginaFavoritos from './frontend/Paginas/PaginaFavoritos';
 import Pedidos from './frontend/Paginas/Pedidos';
 import Registro from './frontend/Login/Registro';
 import RegisterForm from './frontend/Login/RegisterForm';
-import PrivateRoute from './backend/PrivateRoute';
+import PrivateRoute from './frontend/Login/PrivateRoute';
 
 const App = () => {
   return (
